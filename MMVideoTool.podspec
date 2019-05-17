@@ -1,19 +1,15 @@
 Pod::Spec.new do |s|
 
 s.name              = "MMVideoTool"
-s.version           = "1.0.0"
+s.version           = "1.0.1"
 s.summary       = "MMVideoTool,some useful video tool to process local video file"
 
 s.description       = "Hh"
 
 s.homepage      = "No homepage"
 
-s.resources         = [
-  'Products/*.metallib'
-]
-
 s.license       = "None"
-s.source        = {:git => "https://github.com/cosmos33/MMVideoTool.git", :tag => "1.0.0" }
+s.source        = {:git => "https://github.com/cosmos33/MMVideoTool.git", :tag => "1.0.1" }
 s.authors       = {"nua.epic" => "yang.naichuan"}
 
 s.platforms     = {"ios" => "9.0"}
