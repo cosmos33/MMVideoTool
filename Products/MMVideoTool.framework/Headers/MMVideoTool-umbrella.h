@@ -14,7 +14,6 @@
 #import "MMVMetalChromaKeyVideoFilter.h"
 #import "MMVOpenGLAlphaVideoFilter.h"
 #import "MMVOpenGLChromaKeyVideoFilter.h"
-#import "MMVideoToolConfiguration.h"
 #import "MMVVideoControl.h"
 #import "MMVVideoRenderer.h"
 #import "MMVGPUImageVideoProcessor.h"
