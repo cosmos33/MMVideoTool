@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name              = "MMVideoTool"
-s.version           = "1.0.2"
+s.version           = "1.0.3"
 s.summary       = "MMVideoTool,some useful video tool to process local video file"
 
 s.description       = "Hh"
@@ -9,7 +9,7 @@ s.description       = "Hh"
 s.homepage      = "No homepage"
 
 s.license       = "None"
-s.source        = {:git => "https://github.com/cosmos33/MMVideoTool.git", :tag => "1.0.2" }
+s.source        = {:git => "https://github.com/cosmos33/MMVideoTool.git", :tag => "1.0.3" }
 s.authors       = {"nua.epic" => "yang.naichuan"}
 
 s.platforms     = {"ios" => "9.0"}
