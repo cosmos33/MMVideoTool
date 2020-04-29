@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@import GPUImage;
+#import <GPUImage/GPUImage.h>
 
 @interface MMVOpenGLChromaKeyVideoFilter : GPUImageFilter
 @property (nonatomic, assign) float threshold;

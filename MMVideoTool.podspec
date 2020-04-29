@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name              = "MMVideoTool"
-s.version           = "1.0.3"
+s.version           = "1.4.2"
 s.summary       = "MMVideoTool,some useful video tool to process local video file"
 
 s.description       = "Hh"

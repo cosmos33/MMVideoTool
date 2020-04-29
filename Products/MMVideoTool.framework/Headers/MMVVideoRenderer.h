@@ -8,7 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "MMVVideoProcessor.h"
 #import "MMVVideoControl.h"
-@import AVFoundation;
+#import "MMVideoEffectConfig.h"
+//#import <AVFoundation/AVFoundation.h>
 
 typedef NS_ENUM(NSInteger, MMVVideoRenderType) {
     MMVVideoRenderTypeMetalPetal,
@@ -26,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)videoRenderer:(id)renderer didFinish:(BOOL)manually;
 - (void)videoRenderer:(id)renderer progressingPercentage:(float)percentage time:(CMTime)time;
 - (void)videoRenderer:(id)renderer statusDidChange:(MMVVideoControlStatus)status formerStatus:(MMVVideoControlStatus)formerStatus;
+
 @end
 
 @interface MMVVideoRenderer : NSObject
@@ -44,6 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)installVideo:(NSURL *)localVideoURL NS_DEPRECATED_IOS(7_0, 7_0, "use installVideo:options: instead");
 
 - (void)installVideo:(NSURL *)localVideoURL options:(nullable MMVVideoOptions *)options;
+
+- (void)installVideoEffectConfig:(MMVideoEffectConfig*)config options:(nullable MMVVideoOptions *)options;
+- (void)renderImage:(UIImage*)image identifier:(NSString *)identifier;
+- (void)renderText:(NSString*)text identifier:(NSString *)identifier;
 
 - (void)start;
 - (void)stop;
@@ -64,6 +70,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MMVVideoOptions : NSObject
 @property (nonatomic, assign) MMVVideoProcessorResizingMode  resizingMode;
 @property (nonatomic, assign) MMVVideoProcessorVideoType videoType;
+@property (nonatomic, assign) float videoScale;
+@property (nonatomic, assign) MMVideoEffectConfigAlphaType alphaType;
+@property (nonatomic, copy) NSArray *postProcessingArray;
+@property (nonatomic, assign) BOOL enablePostProcess;
 @end
 
 

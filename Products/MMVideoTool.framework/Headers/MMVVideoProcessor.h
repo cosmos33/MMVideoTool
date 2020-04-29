@@ -18,11 +18,14 @@ typedef NS_ENUM(NSUInteger, MMVVideoProcessorVideoType) {
     MMVVideoProcessorVideoTypeChroma
 } ;
 
+typedef NS_ENUM(NSUInteger, MMVVideoProcessorAlphaType) {
+    MMVVideoProcessorAlphaTypeHalf = 0,
+    MMVVideoProcessorAlphaTypeCompress
+} ;
+
 @interface MMVVideoAttachment : NSObject
 
-@property (nonatomic, assign)  CGImageRef image;
-
-@property (nonatomic, assign)  CVPixelBufferRef pixelBuffer; // the non-nil 'image' will take place
+@property (nonatomic, assign)  CGImageRef  image; // the non-nil 'image' will take place
 
 @property (nonatomic, assign)  CGSize  size; // size of image/buffer witdh:[0,1], height :[0,1], default : size:{1.f, 1.f}  meaning the whole video buffer will be covered
 @property (nonatomic, assign)  CGPoint  center; // center of image/buffer x:[0,1], y:[0,1]
@@ -30,12 +33,28 @@ typedef NS_ENUM(NSUInteger, MMVVideoProcessorVideoType) {
 @property (nonatomic, assign)  CGFloat  rotation;
 
 @property (nonatomic, copy) NSString *identifier;
+
+@property (nonatomic, assign) float alpha;
+
 @end
 
+@interface MMVVideoPixelBufferAttachment : MMVVideoAttachment
+@property (nonatomic, assign)  CVPixelBufferRef pixelBuffer;
+@end
+
+@interface MMVVideoTextAttachment : MMVVideoAttachment
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *fontName;
+@property (nonatomic, assign) float fontSize;
+@property (nonatomic, assign)  CGColorRef fontColor;
+@end
 
 @interface MMVVideoProcessorOption : NSObject
 @property (nonatomic, assign) MMVVideoProcessorVideoType videoType;
 @property (nonatomic, assign) MMVVideoProcessorResizingMode resizingMode;
+@property (nonatomic, assign) MMVVideoProcessorAlphaType alphaType;
+@property (nonatomic, copy) NSArray *postProcessingArray;
+@property (nonatomic, assign) BOOL enablePostProcess;
 @end
 
 @protocol MMVVideoProcessor<NSObject>
@@ -48,7 +67,8 @@ typedef NS_ENUM(NSUInteger, MMVVideoProcessorVideoType) {
 
 @property (nonatomic, strong, readonly) UIView *renderingView;
 
+@property (nonatomic, assign) float prePasteAttachmentScale;
+
 @property (atomic, strong) NSArray <MMVVideoAttachment *> *videoAttachments;
 
 @end
-

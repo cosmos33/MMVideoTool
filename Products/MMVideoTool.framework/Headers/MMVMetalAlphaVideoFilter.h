@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@import MetalPetal;
+#import <MetalPetal/MetalPetal.h>
 @interface MMVMetalAlphaVideoFilter : MTIUnaryImageRenderingFilter
 
 @property (nonatomic, assign) float scaleFactor;

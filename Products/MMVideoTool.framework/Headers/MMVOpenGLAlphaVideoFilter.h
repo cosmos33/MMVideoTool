@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@import GPUImage;
+#import <GPUImage/GPUImage.h>
 @interface MMVOpenGLAlphaVideoFilter : GPUImageFilter
 @property (nonatomic, assign) float scale;
 @end

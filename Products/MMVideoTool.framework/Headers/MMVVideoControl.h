@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, MMVVideoControlStatus) {
     MMVVideoControlStatusFinished = 3
 };
 @class MMVVideoControl, MMVVideoControlOption;
-@import AVFoundation;
+#import <AVFoundation/AVFoundation.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MMVVideoControlDelegate<NSObject>
