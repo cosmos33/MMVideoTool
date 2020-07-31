@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MMVideoTool"
-  s.version      = "1.4.3"
+  s.version      = "1.4.3.1"
   s.summary      = "A short description of MMVideoTool."
   s.description  = <<-DESC
 Hh 
@@ -10,7 +10,7 @@ Hh
 
   s.license = 'None'
   s.requires_arc = true
-  s.source = {:git => 'https://github.com/cosmos33/MMVideoTool.git', :tag => s.version}
+  s.source = {:git => 'https://github.com/cosmos33/MMVideoTool.git', :tag => '1.4.3'}
 
   s.summary = 'MMVideoTool,some useful video tool to process local video file'
   s.homepage = 'No homepage'
@@ -19,8 +19,14 @@ Hh
   s.source_files = '**/*.{h,m,c,mm,metal,cpp}'
   s.resources = '**/*.{bundle}', '*.json'
   s.private_header_files = '**/BezierEvaluator.h'
-  #s.exclude_files = "Classes/Exclude"
+
+  s.exclude_files = 'Products/MMVideoTool.bundle'
+  s.vendored_frameworks = 'Products/MMVideoTool.framework'
   
+
+  #s.exclude_files = "Classes/Exclude"
+  s.static_framework = true 
+
   s.dependency 'MetalPetal'
   s.dependency 'GPUImage'
   
