@@ -52,7 +52,7 @@ typedef NS_ENUM(NSUInteger, MMVVideoProcessorAlphaType) {
 @interface MMVVideoProcessorOption : NSObject
 @property (nonatomic, assign) MMVVideoProcessorVideoType videoType;
 @property (nonatomic, assign) MMVVideoProcessorResizingMode resizingMode;
-@property (nonatomic, assign) MMVVideoProcessorAlphaType alphaType;
+@property (nonatomic, copy, nullable) NSDictionary *mixSettings;
 @property (nonatomic, copy) NSArray *postProcessingArray;
 @property (nonatomic, assign) BOOL enablePostProcess;
 @end

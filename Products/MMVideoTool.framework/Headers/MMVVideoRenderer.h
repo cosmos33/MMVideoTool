@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) MMVVideoProcessorResizingMode  resizingMode;
 @property (nonatomic, assign) MMVVideoProcessorVideoType videoType;
 @property (nonatomic, assign) float videoScale;
-@property (nonatomic, assign) MMVideoEffectConfigAlphaType alphaType;
+@property (nonatomic, copy, nullable) NSDictionary *mixSettinngs;
 @property (nonatomic, copy) NSArray *postProcessingArray;
 @property (nonatomic, assign) BOOL enablePostProcess;
 @end
