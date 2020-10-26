@@ -10,10 +10,6 @@
 
 @class MMVVideoAttachment;
 
-typedef NS_ENUM(NSInteger, MMVideoEffectConfigAlphaType) {
-    MMVideoEffectConfigAlphaTypeHalf = 0,
-    MMVideoEffectConfigAlphaTypeCompress = 1
-};
 
 @protocol MMVideoEffectConfigPreviewDelegate<NSObject>
 
@@ -34,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<MMVideoEffectConfigPreviewDelegate> previewDataSource;
 
-@property (nonatomic, assign) MMVideoEffectConfigAlphaType alphaType;
+@property (nonatomic, copy, nullable) NSDictionary* mixSettings;
 
 @property (nonatomic, copy) NSArray *postProcessingArray;
 

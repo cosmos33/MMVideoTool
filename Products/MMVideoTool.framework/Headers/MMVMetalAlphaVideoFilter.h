@@ -12,5 +12,6 @@
 @interface MMVMetalAlphaVideoFilter : MTIUnaryImageRenderingFilter
 
 @property (nonatomic, assign) float scaleFactor;
-
+@property (nonatomic, assign) simd_float4 alphaLocation;
+@property (nonatomic, assign) simd_float4 videoLocation; // x,y,w,h
 @end
