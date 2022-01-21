@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSArray *postProcessingArray;
 
+@property (nonatomic, assign) BOOL loopON;
+
 - (instancetype)initWithLocalPathURL:(NSURL *)url;
 
 -(BOOL)checkVideoSource;

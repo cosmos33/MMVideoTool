@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, MMVVideoProcessorAlphaType) {
     MMVVideoProcessorAlphaTypeHalf = 0,
     MMVVideoProcessorAlphaTypeCompress
 } ;
-
+NS_ASSUME_NONNULL_BEGIN
 @interface MMVVideoAttachment : NSObject
 
 @property (nonatomic, assign)  CGImageRef  image; // the non-nil 'image' will take place
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, MMVVideoProcessorAlphaType) {
 @property (nonatomic, assign) MMVVideoProcessorVideoType videoType;
 @property (nonatomic, assign) MMVVideoProcessorResizingMode resizingMode;
 @property (nonatomic, copy, nullable) NSDictionary *mixSettings;
-@property (nonatomic, copy) NSArray *postProcessingArray;
+@property (nonatomic, copy, nullable) NSArray *postProcessingArray;
 @property (nonatomic, assign) BOOL enablePostProcess;
 @end
 
@@ -71,4 +71,9 @@ typedef NS_ENUM(NSUInteger, MMVVideoProcessorAlphaType) {
 
 @property (atomic, strong) NSArray <MMVVideoAttachment *> *videoAttachments;
 
+@property (nonatomic, assign) float backgroundBlurAmount;
+@property (nonatomic, assign) CGRect rectOfContentInBackground;
+
 @end
+
+NS_ASSUME_NONNULL_END

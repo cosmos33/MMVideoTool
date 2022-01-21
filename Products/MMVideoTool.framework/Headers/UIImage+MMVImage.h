@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (MMVImage)
 
 //+ (UIImage *)textImageWithBaseImg:(UIImage *)img baseSize:(CGSize)baseSize text:(NSString *)text fontSize:(NSInteger)fontSize textColorStr:(NSString *)textColor;
-+ (UIImage *)textImageWithVideoWidth:(CGFloat)videoWidth BaseImg:(UIImage *)img baseSize:(CGSize)baseSize text:(NSString *)text fontSize:(NSInteger)fontSize textColorStr:(NSString *)textColor;
+//+ (UIImage *)textImageWithVideoWidth:(CGFloat)videoWidth BaseImg:(UIImage *)img baseSize:(CGSize)baseSize text:(NSString *)text fontSize:(NSInteger)fontSize textColorStr:(NSString *)textColor;
+//+ (UIImage *)textImageWithBaseImg:(UIImage *)img baseSize:(CGSize)baseSize text:(NSString *)text fontSize:(NSInteger)fontSize videoScale:(CGFloat)videoScale textColorStr:(NSString *)textColor;
++ (UIImage *)textImageWithBaseImg:(UIImage *)img baseSize:(CGSize)baseSize text:(NSString *)text fontPixel:(NSInteger)fontPixel videoScale:(CGFloat)videoScale textColorStr:(NSString *)textColor;
 
 @end
 

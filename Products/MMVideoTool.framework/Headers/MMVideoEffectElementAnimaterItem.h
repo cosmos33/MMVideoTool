@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSTimeInterval duration;
 
 
-+ (instancetype)animaterItemWithMap:(NSDictionary *)itemMap baseURL:(NSURL *)url videoSize:(CGSize)size;
++ (instancetype)animaterItemWithMap:(NSDictionary *)itemMap baseURL:(NSURL *)url videoSize:(CGSize)size videoScale:(CGFloat)videoScale;
 
 -(void)updateAttachmentWithTime:(CMTime)time;
 

@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<MMVVideoControlDelegate> delegate;
 @property (nonatomic, assign, readonly) MMVVideoControlStatus status;
+@property (nonatomic, assign) BOOL loopON;
 
 - (instancetype)initWithOption:(nullable MMVVideoControlOption *)option;
 

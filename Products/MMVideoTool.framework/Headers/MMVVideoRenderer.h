@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, MMVVideoRenderType) {
     MMVVideoRenderTypeGPUImage
 };
 
-@class MMVVideoOptions, MMVRendererOptions;
+@class MMVVideoOptions, MMVRendererOptions, MMVRenderBackgroundSettings;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface MMVVideoRenderer : NSObject
+
+@property (nonatomic, strong) MMVRenderBackgroundSettings *backgroundSettings;
 
 @property (nonatomic, assign) float volume;
 @property (nonatomic, assign) BOOL mute;
@@ -62,18 +64,28 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface MMVRenderBackgroundSettings: NSObject
+
+// background blur
+@property (nonatomic, assign) float blurAmount;
+@property (nonatomic, assign) CGRect rectOfContentInBackground;
+
+@end
+
 @interface MMVRendererOptions: NSObject
 @property (nonatomic, assign) MMVVideoRenderType processorType;
 @property (nonatomic, assign) NSInteger performedFrameRate;
 @end
 
 @interface MMVVideoOptions : NSObject
-@property (nonatomic, assign) MMVVideoProcessorResizingMode  resizingMode;
+@property (nonatomic, assign) MMVVideoProcessorResizingMode resizingMode;
 @property (nonatomic, assign) MMVVideoProcessorVideoType videoType;
 @property (nonatomic, assign) float videoScale;
 @property (nonatomic, copy, nullable) NSDictionary *mixSettinngs;
 @property (nonatomic, copy) NSArray *postProcessingArray;
 @property (nonatomic, assign) BOOL enablePostProcess;
+@property (nonatomic, assign) BOOL loopON;
+
 @end
 
 
